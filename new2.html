@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Test1</title>
+
+    <style>
+        body {
+            margin: 0;
+            /* vh 是view height 既视窗高度的意思，100就是100%占满窗口高度 */
+            height: 100vh;
+            background-color: rgb(250, 245, 245);
+        }
+
+        * {
+            border: 1px solid rgb(250, 245, 245);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .basiSe {
+            background-color: white;
+        }
+        /* 占满比例 */
+        .flex1 {
+            flex: 1
+        }
+        /* 竖向 */
+        .column {
+            flex-direction: column;
+        }
+        /* 阴影 */
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+
+      .header {
+        background: linear-gradient(to left bottom, hsl(150, 100%, 85%) 0%,hsl(68, 100%, 85%) 100%);
+        text-align: center;
+        padding: 20px;
+        font-size: large;
+        color:black;
+      }
+      /* 白色背景 */
+      .baiSe {
+        background-color: #fff;
+      }
+      /* 上下左右外边距 */
+      .mg8 {
+        margin: 8px;
+      }
+      /* 右外边距 */
+      .mgr8 {
+        margin-right: 8px;
+      }
+      /* 上外边距 */
+      .mgt8 {
+        margin-top: 8px;
+      }
+      /* 四个小盒子 */
+      .shuJu {
+        height: 100px;
+      }
+      /* 中间的大盒子 */
+      .lieBiaoXiang {
+        height: 160px;
+      }
+      /* 导航条 */
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(201, 201, 201);
+        font-size: 14px;
+        color: #666;
+      }
+      .neiRong::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+
+      /* 当屏幕宽度小于600px时要改变的css */
+      @media (max-width: 600px) {
+        /* 小屏幕上取消侧边栏，后面学js时会教怎么弹出 */
+        .ceBian {
+          display: none;
+        }
+        /* 内容栏和数据栏flex方向改为竖向 */
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        /* 右区加左外边距 */
+        .youQu {
+          margin-left: 8px;
+        }
+        /* 数据块外边距，大小改为自动宽高 */
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
+
+</head>
+
+<body class="flex yinYing">
+    <div class="flex flex column">
+        <!--上部分-->
+        <div style="flex:9;" class="flex">
+            <!-- 侧边栏 -->
+            <div class="flex flex flex1">
+                <!-- 侧边头像栏 -->
+                <div style="width: 200px;height:100%;">
+                    <div style="
+                        padding: 10px;
+                        align-items: center;
+                        justify-content: center;
+                        border-bottom: 1px solid #999;" class="flex">
+                        <img alt="logo" src="https://kangwenchang.com/logo.png" width="40px" height="40px" />
+                        <div style="margin-left: 10px">康文昌</div>
+                    </div>
+                    <!-- 导航栏 -->
+                    <div class="flex1">
+                        <div class="daoHang">导航</div>
+                        <div class="daoHang">导航</div>
+                        <div class="daoHang">导航</div>
+                        <div class="daoHang">导航</div>
+                        <div class="daoHang">导航</div>
+                    </div>
+                </div>
+            <!-- 主区域 -->
+            <div style="width: 100%;height:100%;" class="flex flex flex flex1 column">
+                <!-- 头部栏 -->
+                <div style="height: 60px; z-index: 2;" class="baiSe yinYing header">
+                        sdsadasdasdda
+                </div>
+                <div style="height: 50px; z-index: 2;" class="baiSe yinYing">
+                    <div class="flex ">
+                        <!-- 四个小块显示重点数据 -->
+                        <div style="height: 30px;width:100px;"class="baiSe yinYing flex "></div>
+                        <div style="height: 30px;width:100px;"class="baiSe yinYing flex"></div>
+                        <div style="height: 30px;width:100px;"class="baiSe yinYing flex "></div>
+                        <div style="height: 30px;width:100px;"class="baiSe yinYing flex"></div>
+                      </div>
+                </div>
+                    <!-- 内容区 -->
+                <div class="flex flex1 neiRong baiSe yinYing" style="overflow: auto">
+                        <!-- 左区 -->
+                    <div style="flex: 3" class="flex column mg8 neirong">
+                            <!-- 数据区 -->
+                        <div class="flex shuJuQu">
+                                <!-- 四个小块显示重点数据 -->
+                                <div class="shuJu baiSe yinYing flex1 mgr8"></div>
+                                <div class="shuJu baiSe yinYing flex1 mgr8"></div>
+                                <div class="shuJu baiSe yinYing flex1 mgr8"></div>
+                                <div class="shuJu baiSe yinYing flex1"></div>
+                              </div>
+                            <!-- 列表区，列表数据可以无限增加 -->
+                        <div class="flex column neirong">
+                                <!-- 列表项 -->
+                                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                                <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+                        </div>
+                        </div>
+                        <!-- 右区 -->
+                        <div style="flex: 1" class="youQu flex column mgr8 mgt8">
+                            <!-- 提示区 -->
+                            <div style="height: 25%" class="baiSe yinYing"></div>
+                            <!-- 消息区 -->
+                            <div style="height: 25%" class="mgt8 baiSe yinYing"></div>
+                            <!-- 备注区 -->
+                            <div style="height: 50%" class="mgt8 baiSe yinYing"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--shang cebian-->
+
+
+
+        </div>
+        <!--dibu-->
+        <div style="flex:1" class="baiSe yinYing">
+
+            <p>明朝文人吴承恩一生仕途艰辛，晚年辞官归隐闭门著述。他在《西游记》第一回中题诗描述书中南瞻部洲人们的生活状态，一如现实中我们的芸芸众生之相。
+                诗中说，人人都在争名夺利，什么时候能够停止呢？追逐名利的人每日起早贪黑，没有一点自由。骑着驴子又想要骏马，官居宰相又想称王封侯。
+                整天为吃饭穿衣而劳碌奔波，从不惧怕阎王爷会随时来取魂勾命。又想着挣下家业传给子孙，从来没有一个明白人能够回头。诗中表达了作者对不顾及自身安危的追名逐利之人的无奈，
+                告诫人们要知足常乐，急功近利总会使我们远离生命的意义。飞蛾扑火，我们可以称赞它们向往光明的那种勇敢精神，也可以说那是一种自食其果的愚蠢。
+                恋爱中的痴男怨女，明明知道彼此之间没有结果，一方仍然心情纠结穷追不舍，最后丢掉了曾经的美好，以不欢而散而终结。世间没有绝对的圆满，合乎时宜的东西就是一种美好<br>
+            </p>
+
+        </div>
+    </div>
+</body>
+
+</html>
